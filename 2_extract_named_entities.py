@@ -53,7 +53,21 @@ def main():
             )
         )
 
+
+    #save
+
     utils.save_json(NER_FOLDER, "NER", results)
+
+    final = []
+    for d in results:
+        id_prop = d['id_prop']
+        ner = d['ner']
+        for n in ner:
+            if n['label'] == 'LOC':
+                final.append({'id_prop': id_prop, 'loc': n['span']})
+
+    df = pd.DataFrame(final)
+    df.to_csv('./output/df_ner.csv')
 
 
 if __name__ == "__main__":
