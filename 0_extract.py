@@ -52,9 +52,9 @@ def main():
         except Exception as e:
             logging.error(f"Error processing proposition {id_prop}: {e}")
 
-    date_init = datetime.date(2019, 1, 1)
+    date_init = datetime.date(2011, 1, 1)
     date_end = date_init + datetime.timedelta(int(TIMEDELTA))
-    today = datetime.date.today()
+    today = datetime.date(2018, 12, 31) #datetime.date.today()
     days = (today - date_init).days
 
     pbar_days = tqdm(range(0, days), desc="Days", position=0)
