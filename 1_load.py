@@ -47,6 +47,7 @@ def main():
         props_topics += topic_data
 
     # save
+    print(len(props_data))
     pd.DataFrame(props_data).to_csv("./output/df_props.csv", index=False)
     pd.DataFrame(props_authors).to_csv("./output/df_authors.csv", index=False)
     pd.DataFrame(props_topics).to_csv("./output/df_topics.csv", index=False)

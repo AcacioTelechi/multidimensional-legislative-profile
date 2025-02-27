@@ -30,6 +30,8 @@ def main():
         print("CUDA not available, using CPU")
 
     df_props = pd.read_csv(DF_FOLDER)
+
+    print(len(df_props))
     df_props_ementa_not_null = df_props[~df_props["ementa"].isnull()].copy()
 
     def process_row(row):
